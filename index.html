@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackerrank Challenge | Simple Sum Array</title>
+</head>
+<body>
+    <h1>The purpose of this project is to take array of numbers and provide their sum (addition)</h1>
+    <h3>Enter the numbers you want to add below and separate by comma with no space:</h3>
+    <input type="text" name="" id="numbers">
+    <button onclick="getValue()">Calculate</button><br><br>
+     <span>Answer = </span><span id="solution"></span>
+    <script>
+
+        function simpleArraySum(arrayString) {
+            let sum = 0;
+
+            for (let i = 0; i < arrayString.length; i++) {
+
+                // Number() converts string type from array to number type
+                let arrayNumber = Number(arrayString[i]);
+                sum += arrayNumber;
+            }
+
+            // console.log(sum);
+            return sum;
+        }
+
+        function getValue() {
+
+            // split() converts the string input to an array i.e ["2","3","4", . . .];
+            let arrayString = (document.getElementById('numbers').value).split(",");
+            document.getElementById('solution').innerHTML = simpleArraySum(arrayString);
+        }
+
+    </script>
+</body>
+</html>
